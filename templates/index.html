@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Forest Analysis</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    </head>
+    <body>
+        <!-- nav section .... -->
+        {%include 'navbar.html'%}
+        
+        <div class="container">
+            <div class="">
+                <h1 class="display-md-1 display-4 mt-5">Forest Analysis</h1>
+                <h1 class="display-md-1 display-6">Using DataCube</h1>                
+            </div>
+            <br>
+            <hr>
+            <div>
+                <h2 class="display-md-1 display-6 mt-5">What is DataCube?</h2>
+                <br>
+                <ul class="mt-3">
+                    <li>A data cube is a multi-dimensional representation of data that allows for efficient analysis and exploration of large datasets. It extends the concept of a two-dimensional table to multiple dimensions, enabling analysis across various dimensions simultaneously.</li>
+                    <br>
+                    <li>Data cubes organize data into a structured format that facilitates aggregations, summarizations, and drill-downs. </li>
+                    <br>
+                    <li>The data in a data cube is pre-aggregated, which means that it contains pre-computed summary information at different levels of granularity. </li>
+                    <br>
+                    <li>We use Xarray a python library to work on the datacube</li>
+                </ul>
+                
+                <h2 class="display-md-1 display-6 mt-5">What categories of data were included in our DataCube?</h2>
+                <br>
+                <ul class="mt-3">
+                    <li><p class=" display-6 fs-4">Satellite Images</p></li>
+                    <p>We have collected a huge time range of Satellite images from the Adilabad area in Telangana for that we have added a product into our datacube and appended every single safe file by converting them into YAML file which are filled with the proper metadata of that area.</p>
+                </ul>
+                <h2 class="display-md-1 display-6 mt-5">Usage of DataCube?</h2>
+                <br>
+                <ul class="mt-3">
+                    <li><p class=" display-6 fs-4">Data Storage:</p></li>
+                    <p>Our datacube serves as a central repository for satellite images and CSV data. Satellite images are high-resolution captures obtained by satellite sensors, providing detailed geospatial information. Additionally, we store CSV files, which offer tabular data representation, further complementing our satellite imagery analysis efforts.</p>
+                    <li><p class=" display-6 fs-4">Flask App Development:</p></li>
+                    <p>To enable seamless interaction with the datacube and present our findings, we have developed a Flask application. Flask, a web application development framework, empowers us to create a user-friendly interface and robust functionalities for analyzing and visualizing geospatial data.</p>
+                    <li><p class=" display-6 fs-4">NDVI and NDWI Analysis:</p></li>
+                    <p>Our Flask app takes advantage of the data stored in the datacube to generate normalized difference vegetation index (NDVI) and normalized difference water index (NDWI) maps. NDVI measures vegetation health and density by analyzing the differences in reflectance between near-infrared and visible red bands. NDWI, on the other hand, assesses water content by examining the disparities in reflectance between shortwave infrared and green or near-infrared bands.</p>
+                    
+                </ul>
+            </div>
+        </div>
+        <br>
+              
+
+        <style type="text/css">
+          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+          
+          
+      </style>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    </body>
+    
+</html>
