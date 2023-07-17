@@ -179,7 +179,6 @@
       
           function getPolygonCoords(coords) {
               var latLngs = coords[0];
-              console.log(coords)
               var polygonCoords = [];
               for (var i = 0; i < latLngs.length; i++) {
                   polygonCoords.push([latLngs[i].lat, latLngs[i].lng]);
@@ -236,6 +235,7 @@
               cardBlock2.style.display="block"
           })
           let flag=0;
+          let a=0
             async function submitValue(event) {
               event.preventDefault()
               if(!clist.length){
@@ -245,14 +245,12 @@
                 
                   return Swal.fire('Error',"No analysis selected",'error')
               }
-               
-                
-
-                
-                
               o=document.getElementById('type').value     
               if(document.getElementById('type').value=='graph'){
-                  for (let i = 0; i < clist.length; i++) {
+                    let fl=true
+                  for (let i = a; i < clist.length; i++) {
+                        fl=false                  
+                        a=a+1
                       let cor = clist[i];
                       let color=area_colors[i];
                       if (fetched[o].includes(cor)) {
@@ -292,12 +290,14 @@
                       }
                       finally{
                         loadingSpinner.style.display = "none";
-                      }
-                      
+                      }               
                       
                   }
+                  if(fl){
+                    Swal.fire('Success', 'the data is already rendered', 'success')
+                  }
                   return
-              }
+                }
               
               for (let i = 0; i < clist.length; i++) {
                   let cor = clist[i];
