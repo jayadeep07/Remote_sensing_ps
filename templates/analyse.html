@@ -189,6 +189,14 @@
         
         let mybutton = document.getElementById("myBtn");
 
+        var bounds = [[18.8823135665104,78.1492640061872],[19.8871534401748,79.1940462547119]];
+
+        // create an orange rectangle
+        L.rectangle(bounds, {color: "#72A0C1", weight: 1}).addTo(map);
+
+        // zoom the map to the rectangle bounds
+        // map.fitBounds(bounds);
+
         // When the user scrolls down 20px from the top of the document, show the button
         window.onscroll = function() {scrollFunction()};
 

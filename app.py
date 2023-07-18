@@ -37,7 +37,7 @@ def analysis(analysis_type):
         study_area_lon = (coordinates[1][1], coordinates[2][1])
 
         try:
-            dc = datacube.Datacube(app='water_change_analysis')
+            dc = datacube.Datacube(app='cube')
 
             ds = dc.load(product='s2a_sen2cor_granule',
                 x=study_area_lon,
