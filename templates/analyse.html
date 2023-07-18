@@ -303,7 +303,7 @@
                       
                   }
                   if(fl){
-                    Swal.fire('Success', 'the data is already rendered', 'success')
+                    Swal.fire('Error', 'the data is already rendered', 'error')
                   }
                   return
                 }
@@ -313,7 +313,7 @@
                   let color=area_colors[i];
                   if (fetched[o].includes(cor)) {
                       
-                    Swal.fire('Success', 'the data is already rendered', 'success')
+                    Swal.fire('Error', 'the data is already rendered', 'error')
                       continue;
                   }
               
